@@ -1,3 +1,4 @@
+import { Timestamp } from "mongodb";
 import {Sequelize} from "sequelize";
 import db from "../config/db.js";
 
@@ -5,9 +6,10 @@ const {DataTypes} = Sequelize;
 
 const ListTodo = db.define('listtodo', {
     item: DataTypes.STRING,
-    kondisi: DataTypes.ENUM
+    kondisi: DataTypes.ENUM('penting', 'santuy', 'mendadak'),
 },{
-    freezeTableName:true
+    freezeTableName:true,
+    timestamp:false
 });
 
 export default ListTodo;
