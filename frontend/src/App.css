@@ -1,0 +1,24 @@
+.App {
+    margin-top: 100px;
+  }
+  
+  header{
+    text-align: center;
+  }
+  
+  .konten{
+    background: rgba(24, 24, 16, .2);
+    border-radius: 2em;
+    backdrop-filter: blur(25px);
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    background-clip: padding-box;
+  }
+  
+  h1,h2,h3,p{
+    font-family: "Poppins";
+    color: #ffff;
+  }
+  
+  h4{
+    font-family: "Poppins";
+  }

@@ -2,7 +2,7 @@ GET http://localhost:5000/list-todo
 # menampilkan semua data pada tabel
 
 ###
-GET http://localhost:5000/list-todo/1
+GET http://localhost:5000/list-todo/4
 # menampilkan data dengan id tertentu
 
 ###
@@ -11,23 +11,25 @@ POST http://localhost:5000/list-todo
 Content-Type: application/json
 
 {
-    "item": "Kuliah",
-    "kondisi": "penting"
+    "item": "Kuliahh",
+    "kondisi": "mendadak",
+    "deadline": "20/09/2090"
 }
 
 
 ###
-PATCH  http://localhost:5000/list-todo/1
+PATCH  http://localhost:5000/list-todo/4
 # update data pada tabel
 Content-Type: application/json
 
 {
     "item": "rapat",
-    "kondisi": "santuy"
+    "kondisi": "santuy",
+    "deadline": "20/09/2090"
 }
 
 ###
-DELETE  http://localhost:5000/list-todo/5
+DELETE  http://localhost:5000/list-todo/10
 # hapus data pada tabel
 Content-Type: application/json
 
