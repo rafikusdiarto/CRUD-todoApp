@@ -1,12 +1,20 @@
 import Form from './components/form/Form.jsx'
 import Todo from './components/todo/Todo.jsx'
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+
 import './App.css';
 
 function App() {
   return (
     <>
-      <div className='App'>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<><Form/><Todo/></>}></Route>
+        {/* <Route path='add' element={<Form/>}></Route> */}
+      </Routes>
+      {/* <div className='App'>
         <header>
           <h1>To do list</h1>
         </header>
@@ -14,7 +22,9 @@ function App() {
       <div className='container konten'>
         <Form />
         <Todo/>
-      </div>
+      </div> */}
+
+    </BrowserRouter>
     </>
   );
 }

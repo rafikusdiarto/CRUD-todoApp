@@ -8,7 +8,7 @@ import { getListTodo,
 
 const router = express.Router();
 
-router.get('/', getListTodo);
+// router.get('/', getListTodo);
 router.get('/list-todo', getListTodo);
 router.get('/list-todo/:id', getListTodoByID);
 router.post('/list-todo', createTodoList);
