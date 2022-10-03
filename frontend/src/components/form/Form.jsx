@@ -26,7 +26,7 @@ const Form = () => {
           </div>
 
           <div class="col-3">
-            <p>DEADLINE</p>
+            <p>DEADLINE (DD/MM/YYYY)</p>
             <div class="input-group date" id="datepicker">
               <input type="date" class="form-control"/>
             </div>
