@@ -2,10 +2,10 @@ import React, {useState, useEffect}from 'react'
 import './form.css'
 import axios from 'axios';
 import {useNavigate, useParams} from "react-router-dom";
-import './EditItems.jsx'
+import './Form.jsx'
 
 
-const Form = () => {
+const EditItems = () => {
   const [item, setItems] = useState("");
   const [kondisi, setKondisi] = useState("");
   const navigate = useNavigate();
@@ -41,30 +41,32 @@ const Form = () => {
     setKondisi(response.data.kondisi)
   }
 
+
   
   return (
     <>
-      <div class="mb-5">
-        <div class="row text-center ">
-          <div class="col " onSubmit={addItems}>
+      <div class="container-sm my-3"  >
+        <div class="row text-center">
+          <div class="col" onSubmit={addItems}>
+            <p>TASK</p>
             <form >
-              <div class="row">
-                <div class="col">
-                  <p>TASK</p>
-                  <input type="text"  value={item} onChange={(e) => setItems(e.target.value)} placeholder="add new task" class="form-control"/> 
-                </div>
-                <div class="col-3">
-                  <p>KONDISI</p>
-                  <select class="form-select" value={kondisi} onChange={(e) => setKondisi(e.target.value)}>
-                    <option value=""></option>
-                    <option value="penting">Penting</option>
-                    <option value="mendadak">Mendadak</option>
-                    <option value="santuy">Santuy</option>
-                  </select>
-                </div>
+              <div class="form-group">
+                <input type="text"  value={item} onChange={(e) => setItems(e.target.value)} placeholder="add new task" class="form-control"
+                /> 
               </div>
-              <div class="col mt-4 text-center">
-                  <button type="submit"  class="btn btn-primary">Add</button>
+              <div class="col-3">
+                <p>KONDISI</p>
+                <select class="form-select" value={kondisi} onChange={(e) => setKondisi(e.target.value)}>
+                  <option value=""></option>
+                  <option value="penting">Penting</option>
+                  <option value="mendadak">Mendadak</option>
+                  <option value="santuy">Santuy</option>
+                </select>
+              </div>
+              <div class="row p-1 mb-2">
+                <div class="col mt-2 text-center">
+                    <button type="submit"  class="btn btn-primary">Add</button>
+                </div>
               </div>
 
             </form>
@@ -79,9 +81,8 @@ const Form = () => {
 
         </div>
       </div>
-
     </>
   )
 }
 
-export default Form
+export default EditItems

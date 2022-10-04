@@ -7,22 +7,17 @@ import './App.css';
 function App() {
   return (
     <>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/list-todo' element={<><Form/><Todo/></>}></Route>
-        {/* <Route path='add' element={<Form/>}></Route> */}
-      </Routes>
-      {/* <div className='App'>
-        <header>
-          <h1>To do list</h1>
-        </header>
+      <header class="text-center mt-5">
+        <h1>ToDo List</h1>
+      </header>
+      <div class="container konten p-5">
+        <BrowserRouter>
+          <Routes>
+            <Route path='/list-todo' element={<><Form/><Todo/></>}></Route>
+            {/* <Route path='add' element={<Form/>}></Route> */}
+          </Routes>
+        </BrowserRouter>
       </div>
-      <div className='container konten'>
-        <Form />
-        <Todo/>
-      </div> */}
-
-    </BrowserRouter>
     </>
   );
 }
