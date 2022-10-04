@@ -2,7 +2,7 @@ GET http://localhost:5000/list-todo
 # menampilkan semua data pada tabel
 
 ###
-GET http://localhost:5000/list-todo/
+GET http://localhost:5000/list-todo/1
 # menampilkan data dengan id tertentu
 
 ###

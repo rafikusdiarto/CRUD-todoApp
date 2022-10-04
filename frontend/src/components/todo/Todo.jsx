@@ -17,8 +17,9 @@ const getItem = async () => {
   return (
     <>
       {item.map((item, index) => (
-        <li class="row mb-3 ms-2">
+        <li class="row mb-3 ms-2" key={index}>          
           <div class="col list">
+            <h1>{index+1}</h1>
             <h4>{item.item}</h4>
           </div>
           <div class="col-3 list ms-2 text-center">

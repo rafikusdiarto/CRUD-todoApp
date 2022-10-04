@@ -5,44 +5,56 @@ import {useNavigate} from "react-router-dom";
 
 
 const Form = () => {
-const [items, setItems] = useState("");
+const [item, setItems] = useState("");
 const [kondisi, setKondisi] = useState("");
 const navigate = useNavigate();
 
 const addItems = async (e) =>{
   e.preventDefault();
   try {
-    await axios.post('http://localhost:5000/list-todo',{
-      items,
-      kondisi
-    });
-    navigate("/list-todo");
-    alert("New List Added");
+    if (item === "") {
+      alert("please add todo again")
+    }else{
+      await axios.post('http://localhost:5000/list-todo',{
+        item,
+        kondisi
+      });
+      navigate("/list-todo");
+      alert("New List Added");
+      window.location.reload(true)
+
+    }
   } catch (error) {
     console.log(error)
   }
 }
   return (
     <>
-      <div class="container-sm my-3">
+      <div class="container-sm my-3"  >
         <div class="row text-center">
-          <div class="col">
+          <div class="col" onSubmit={addItems}>
             <p>TASK</p>
-            <form onSubmit={addItems}>
+            <form >
               <div class="form-group">
-                <input type="text" value={items} onChange={(e) => setItems(e.target.value)} placeholder="add new task" class="form-control"
+                <input type="text"  value={item} onChange={(e) => setItems(e.target.value)} placeholder="add new task" class="form-control"
                 /> 
               </div>
-            </form>
-          </div>
+              <div class="col-3">
+                <p>KONDISI</p>
+                <select class="form-select" value={kondisi} onChange={(e) => setKondisi(e.target.value)}>
+                  <option value=""></option>
+                  <option value="penting">Penting</option>
+                  <option value="mendadak">Mendadak</option>
+                  <option value="santuy">Santuy</option>
+                </select>
+              </div>
+              <div class="row p-1 mb-2">
+                <div class="col mt-2 text-center">
+                    <button type="submit"  class="btn btn-primary">Add</button>
+                </div>
+              </div>
 
-          <div class="col-3">
-            <p>KONDISI</p>
-            <select class="form-select" value={kondisi} onChange={(e) => setKondisi(e.target.value)} aria-label="Default select example" required>
-              <option value="">penting</option>
-              <option value="">mendadak</option>
-              <option value="">santuy</option>
-            </select>
+            </form>
           </div>
 
           {/* <div class="col-3">
@@ -52,13 +64,6 @@ const addItems = async (e) =>{
             </div>
           </div> */}
 
-          <div class="row p-1 mb-2">
-            <div class="col mt-2 text-center">
-              <form method="">
-                <button type="button" class="btn btn-primary">Add</button>
-              </form>
-            </div>
-          </div>
         </div>
       </div>
     </>

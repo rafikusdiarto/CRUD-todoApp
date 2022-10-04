@@ -2,8 +2,6 @@ import Form from './components/form/Form.jsx'
 import Todo from './components/todo/Todo.jsx'
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
-
 import './App.css';
 
 function App() {
@@ -11,7 +9,7 @@ function App() {
     <>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<><Form/><Todo/></>}></Route>
+        <Route path='/list-todo' element={<><Form/><Todo/></>}></Route>
         {/* <Route path='add' element={<Form/>}></Route> */}
       </Routes>
       {/* <div className='App'>
