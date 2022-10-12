@@ -2,7 +2,6 @@ import React, { useEffect, useState} from 'react'
 import './todo.css'
 import axios from 'axios';
 
-
 const Todo = () => {
 const [item,setItem] = useState(['']);
 
@@ -14,6 +13,21 @@ const getItem = async () => {
   const response = await axios.get('http://localhost:5000/list-todo');
   setItem(response.data);
 }
+
+const deleteItems = async (id) => {
+  var result = window.confirm("Are you sure to delete?");
+  if(result){
+    try {
+      await axios.delete(`http://localhost:5000/list-todo/${id}`);
+      getItem()
+    } catch (error) {
+      console.log(error)
+    }
+    console.log("Deleted")
+  }
+}
+
+
   return (
     <>
       {item.map((item, index) => (
@@ -33,7 +47,7 @@ const getItem = async () => {
                   Edit
                   <i class="ms-1 fa-solid fa-pen-to-square"></i>
               </button>
-              <button class="btn btn-danger" >
+              <button class="btn btn-danger" onClick={() => deleteItems(item.id)} >
                   Delete
                   <i class="ms-1 fa-regular fa-trash-can"></i>
               </button>

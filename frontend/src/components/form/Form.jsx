@@ -66,7 +66,6 @@ const Form = () => {
               <div class="col mt-4 text-center">
                   <button type="submit"  class="btn btn-primary">Add</button>
               </div>
-
             </form>
           </div>
 
