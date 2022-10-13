@@ -19,7 +19,7 @@ app.use(ItemsRoute);
 //     console.error('Unable to connect to the database:', error);
 // }
 
-app.listen(5000, () => console.log("now connect to 5000"))
+app.listen(process.env.PORT || 5000, () => console.log("now connect to 5000"))
 
 // app.get('/', (req, res) => {
 //     res.send("hello world");
