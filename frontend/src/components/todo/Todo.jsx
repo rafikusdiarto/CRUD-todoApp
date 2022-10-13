@@ -1,6 +1,8 @@
 import React, { useEffect, useState} from 'react'
 import './todo.css'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 const Todo = () => {
 const [item,setItem] = useState(['']);
@@ -43,10 +45,10 @@ const deleteItems = async (id) => {
               <h4>29/08/2002</h4>
             </div> */}
             <div class="col-3">
-              <button class="btn btn-warning me-2" >
+              <Link to={`edit/${item.id}`} class="btn btn-warning me-2">
                   Edit
                   <i class="ms-1 fa-solid fa-pen-to-square"></i>
-              </button>
+              </Link>
               <button class="btn btn-danger" onClick={() => deleteItems(item.id)} >
                   Delete
                   <i class="ms-1 fa-regular fa-trash-can"></i>

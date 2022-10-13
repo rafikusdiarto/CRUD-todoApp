@@ -3,6 +3,7 @@ import Todo from './components/todo/Todo.jsx'
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import EditItems from './components/form/EditItems.jsx';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/list-todo' element={<><Form/><Todo/></>}></Route>
+            <Route path='/list-todo/edit/:id' element={<EditItems/>}/>
             {/* <Route path='add' element={<Form/>}></Route> */}
           </Routes>
         </BrowserRouter>
