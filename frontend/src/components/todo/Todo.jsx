@@ -16,6 +16,7 @@ const getItem = async () => {
   setItem(response.data);
 }
 
+
 const deleteItems = async (id) => {
   var result = window.confirm("Are you sure to delete?");
   if(result){

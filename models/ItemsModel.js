@@ -1,4 +1,3 @@
-import { Timestamp } from "mongodb";
 import {Sequelize} from "sequelize";
 import db from "../config/db.js";
 
@@ -12,6 +11,7 @@ const ListTodo = db.define('listtodo', {
     freezeTableName:true,
     timestamp:false
 });
+
 
 export default ListTodo;
 

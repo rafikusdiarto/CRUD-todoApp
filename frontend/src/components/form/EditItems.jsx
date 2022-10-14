@@ -1,5 +1,5 @@
 import React, {useState, useEffect}from 'react'
-import './form.css'
+import './additem.css'
 import axios from 'axios';
 import {useNavigate, useParams} from "react-router-dom";
 
@@ -20,7 +20,6 @@ const EditItems = () => {
   },[id]);
 
 
-  
   const updateItems = async (e) =>{
     e.preventDefault();
     try {
@@ -42,7 +41,6 @@ const EditItems = () => {
   }
 
 
-  
   return (
     <>
       <div class="container-sm my-3"  >
