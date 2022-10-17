@@ -11,9 +11,15 @@ const Form = () => {
   const navigate = useNavigate();
   const {id} = useParams();
 
+  
   useEffect(() => {
+    const editItems = async () =>{
+      const response = await axios.get(`http://localhost:5000/list-todo/${id}`)
+      setItems(response.data.item);
+      setKondisi(response.data.kondisi);
+    };
     editItems();
-  },[]);
+  },[id]);
   
   const addItems = async (e) =>{
     e.preventDefault();
@@ -34,12 +40,8 @@ const Form = () => {
       console.log(error)
     }
   }
-
-  const editItems = async () =>{
-    const response = await axios.get(`http://localhost:5000/list-todo/${id}`)
-    setItems(response.data.item);
-    setKondisi(response.data.kondisi)
-  }
+  
+  
 
   
   return (
