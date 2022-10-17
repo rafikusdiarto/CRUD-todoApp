@@ -2,7 +2,7 @@ import React, {useState, useEffect}from 'react'
 import './additem.css'
 import axios from 'axios';
 import {useNavigate, useParams} from "react-router-dom";
-import './EditItems.jsx'
+import './EditItems.jsx';
 
 
 const Form = () => {
@@ -15,8 +15,8 @@ const Form = () => {
   useEffect(() => {
     const editItems = async () =>{
       const response = await axios.get(`http://localhost:5000/list-todo/${id}`)
-      setItems(response.data.item);
-      setKondisi(response.data.kondisi);
+      setItems(response.data.item)
+      setKondisi(response.data.kondisi)
     };
     editItems();
   },[id]);
@@ -35,14 +35,12 @@ const Form = () => {
         alert("New List Added");
         window.location.reload(true)
 
-      }
+      };
     } catch (error) {
       console.log(error)
-    }
-  }
+    };
+  };
   
-  
-
   
   return (
     <>
@@ -70,14 +68,6 @@ const Form = () => {
               </div>
             </form>
           </div>
-
-          {/* <div class="col-3">
-            <p>DEADLINE (DD/MM/YYYY)</p>
-            <div class="input-group date" id="datepicker">
-              <input type="date" class="form-control"/>
-            </div>
-          </div> */}
-
         </div>
       </div>
 
