@@ -34,25 +34,25 @@ const deleteItems = async (id) => {
   return (
     <>
       {item.map((item, index) => (
-        <div className="">
-          <li class="row mb-3 text-center" key={index}>          
-            <div class="col list">
+        <div className="" key={index}>
+          <li className="row mb-3 text-center" >          
+            <div className="col list">
               <h4>{item.item}</h4>
             </div>
-            <div class="col-3 list ms-2">
+            <div className="col-3 list ms-2">
               <h4>{item.kondisi}</h4>
             </div>
-            {/* <div class="col-3 list ms-2 text-center">
+            {/* <div className="col-3 list ms-2 text-center">
               <h4>29/08/2002</h4>
             </div> */}
-            <div class="col-3">
-              <Link to={`edit/${item.id}`} class="btn btn-warning me-2">
+            <div className="col-3">
+              <Link to={`edit/${item.id}`} className="btn btn-warning me-2">
                   Edit
-                  <i class="ms-1 fa-solid fa-pen-to-square"></i>
+                  <i className="ms-1 fa-solid fa-pen-to-square"></i>
               </Link>
-              <button class="btn btn-danger" onClick={() => deleteItems(item.id)} >
+              <button className="btn btn-danger" onClick={() => deleteItems(item.id)} >
                   Delete
-                  <i class="ms-1 fa-regular fa-trash-can"></i>
+                  <i className="ms-1 fa-regular fa-trash-can"></i>
               </button>
             </div>
           </li>

@@ -1,4 +1,3 @@
-import { response } from "express";
 import ListTodo from "../models/ItemsModel.js";
 
 export const getListTodo = async(req, res) => {

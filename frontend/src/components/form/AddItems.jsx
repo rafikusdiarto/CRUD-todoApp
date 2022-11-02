@@ -6,8 +6,8 @@ import './EditItems.jsx';
 
 
 const Form = () => {
-  const [item, setItems] = useState("");
-  const [kondisi, setKondisi] = useState("");
+  const [item, setItems] = useState('');
+  const [kondisi, setKondisi] = useState('');
   const navigate = useNavigate();
   const {id} = useParams();
 
@@ -15,8 +15,8 @@ const Form = () => {
   useEffect(() => {
     const editItems = async () =>{
       const response = await axios.get(`http://localhost:5000/list-todo/${id}`)
-      setItems(response.data.item)
-      setKondisi(response.data.kondisi)
+      setItems( response.item)
+      setKondisi(response.kondisi)
     };
     editItems();
   },[id]);
@@ -24,7 +24,7 @@ const Form = () => {
   const addItems = async (e) =>{
     e.preventDefault();
     try {
-      if (item === "") {
+      if (item === " ") {
         alert("please add todo again")
       }else{
         await axios.post('http://localhost:5000/list-todo',{
@@ -44,18 +44,18 @@ const Form = () => {
   
   return (
     <>
-      <div class="mb-5">
-        <div class="row text-center ">
-          <div class="col " onSubmit={addItems}>
+      <div className="mb-5">
+        <div className="row text-center ">
+          <div className="col " onSubmit={addItems}>
             <form >
-              <div class="row">
-                <div class="col">
+              <div className="row">
+                <div className="col">
                   <p>TASK</p>
-                  <input type="text"  value={item} onChange={(e) => setItems(e.target.value)} placeholder="add new task" class="form-control"/> 
+                  <input type="text"  value={item} onChange={(e) => setItems(e.target.value)} placeholder="add new task" className="form-control"/> 
                 </div>
-                <div class="col-3">
+                <div className="col-3">
                   <p>KONDISI</p>
-                  <select class="form-select" value={kondisi} onChange={(e) => setKondisi(e.target.value)}>
+                  <select className="form-select" value={kondisi} onChange={(e) => setKondisi(e.target.value)}>
                     <option value=""></option>
                     <option value="penting">Penting</option>
                     <option value="mendadak">Mendadak</option>
@@ -63,14 +63,13 @@ const Form = () => {
                   </select>
                 </div>
               </div>
-              <div class="col mt-4 text-center">
-                  <button type="submit"  class="btn btn-primary">Add</button>
+              <div className="col mt-4 text-center">
+                  <button type="submit"  className="btn btn-primary">Add</button>
               </div>
             </form>
           </div>
         </div>
       </div>
-
     </>
   )
 }

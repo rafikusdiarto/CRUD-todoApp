@@ -8,9 +8,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 app.use(ItemsRoute);
+const PORT = 5000;
 
 
-// app.listen(PORT, () => console.log(`now connect to ${PORT}`));
+// app.listen(PORT, () => console.log("now connect to 5000"))
+
+app.listen(PORT, (req,res) => console.log(`now connect to ${PORT}`));
 
 // try {
 //     await db.authenticate();
@@ -19,7 +22,6 @@ app.use(ItemsRoute);
 //     console.error('Unable to connect to the database:', error);
 // }
 
-app.listen(process.env.PORT || 5000, () => console.log("now connect to 5000"))
 
 // app.get('/', (req, res) => {
 //     res.send("hello world");

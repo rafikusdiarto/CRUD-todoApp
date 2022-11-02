@@ -5,8 +5,8 @@ import {useNavigate, useParams} from "react-router-dom";
 
 
 const EditItems = () => {
-  const [item, setItems] = useState("");
-  const [kondisi, setKondisi] = useState("");
+  const [item, setItems] = useState('');
+  const [kondisi, setKondisi] = useState('');
   const navigate = useNavigate();
   const {id} = useParams();
 
@@ -18,7 +18,6 @@ const EditItems = () => {
     };
     getProductById();
   },[id]);
-
 
   const updateItems = async (e) =>{
     e.preventDefault();
@@ -43,16 +42,16 @@ const EditItems = () => {
 
   return (
     <>
-      <div class="container-sm my-3"  >
-        <div class="row text-center">
-          <div class="col" onSubmit={updateItems}>
+      <div className="container-sm my-3"  >
+        <div className="row text-center">
+          <div className="col" onSubmit={updateItems}>
             <p>TASK</p>
             <form>
-              <div class="form-group">
-                <input type="text"  value={item} onChange={(e) => setItems(e.target.value)} placeholder="add new task" class="form-control"/> 
-                <div class="col-3">
+              <div className="form-group">
+                <input type="text"  value={item} onChange={(e) => setItems(e.target.value)} placeholder="add new task" className="form-control"/> 
+                <div className="col-3">
                   <p>KONDISI</p>
-                  <select class="form-select" value={kondisi} onChange={(e) => setKondisi(e.target.value)}>
+                  <select className="form-select" value={kondisi} onChange={(e) => setKondisi(e.target.value)}>
                     <option value=""></option>
                     <option value="penting">Penting</option>
                     <option value="mendadak">Mendadak</option>
@@ -60,19 +59,19 @@ const EditItems = () => {
                   </select>
                 </div>
               </div>
-              <div class="row p-1 mb-2">
-                <div class="col mt-2 text-center">
-                    <button type="submit" class="btn btn-primary">Update</button>
+              <div className="row p-1 mb-2">
+                <div className="col mt-2 text-center">
+                    <button type="submit" className="btn btn-primary">Update</button>
                 </div>
               </div>
 
             </form>
           </div>
 
-          {/* <div class="col-3">
+          {/* <div className="col-3">
             <p>DEADLINE (DD/MM/YYYY)</p>
-            <div class="input-group date" id="datepicker">
-              <input type="date" class="form-control"/>
+            <div className="input-group date" id="datepicker">
+              <input type="date" className="form-control"/>
             </div>
           </div> */}
 

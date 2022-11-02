@@ -8,10 +8,10 @@ import EditItems from './components/form/EditItems.jsx';
 function App() {
   return (
     <>
-      <header class="text-center mt-5">
+      <header className="text-center mt-5">
         <h1>ToDo List</h1>
       </header>
-      <div class="container konten p-5">
+      <div className="container konten p-5">
         <BrowserRouter>
           <Routes>
             <Route path='/list-todo' element={<><AddItems/><Todo/></>}></Route>

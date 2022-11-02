@@ -6,7 +6,6 @@ const {DataTypes} = Sequelize;
 const ListTodo = db.define('listtodo', {
     item: DataTypes.STRING,
     kondisi: DataTypes.ENUM('penting', 'santuy', 'mendadak'),
-    deadline: DataTypes.DATE,
 },{
     freezeTableName:true,
     timestamp:false
